@@ -21,7 +21,9 @@ else
 fi
 local git_branch='$(git_prompt_info)%{$reset_color%}'
 
-PROMPT="╭─${user_host} ${current_dir} ${rvm_ruby} ${git_branch}
+local time_and_date='%{$terminfo[bold]$fg[grey]%}[%* - %D]%{$reset_color%}'
+
+PROMPT="╭─ ${time_and_date} ${user_host} ${current_dir} ${rvm_ruby} ${git_branch}
 ╰─%B${user_symbol}%b "
 RPS1="%B${return_code}%b"
 
