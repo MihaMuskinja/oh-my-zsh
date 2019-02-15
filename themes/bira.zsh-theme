@@ -1,5 +1,5 @@
 # ZSH Theme - Preview: https://gyazo.com/8becc8a7ed5ab54a0262a470555c3eed.png
-local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
+local return_code="%(?..%{$fg[red]%}%? %{$reset_color%})"
 
 
 if [[ $UID -eq 0 ]]; then
@@ -23,8 +23,8 @@ local git_branch='$(git_prompt_info)%{$reset_color%}'
 
 local time_and_date='%{$terminfo[bold]$fg[grey]%}[%* - %D]%{$reset_color%}'
 
-PROMPT="╭─ ${time_and_date} ${user_host} ${current_dir} ${rvm_ruby} ${git_branch}
-╰─%B${user_symbol}%b "
+PROMPT="| ${time_and_date} ${user_host} ${current_dir} ${rvm_ruby} ${git_branch}
+|_%B${user_symbol}%b "
 RPS1="%B${return_code}%b"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}‹"
