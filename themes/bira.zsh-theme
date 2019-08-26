@@ -21,11 +21,11 @@ else
 fi
 local git_branch='$(git_prompt_info)%{$reset_color%}'
 
-local time_and_date='%{$terminfo[bold]$fg[grey]%}[%* - %D]%{$reset_color%}'
+local time_and_date='%{$terminfo[bold]$fg[grey]%}%* - %D%{$reset_color%}'
 
-PROMPT="| ${time_and_date} ${user_host} ${current_dir} ${rvm_ruby} ${git_branch}
-|_%B${user_symbol}%b "
-RPS1="%B${return_code}%b"
+PROMPT="${user_host} ${current_dir} %B${user_symbol}%b "
+RPS1="${time_and_date}${rvm_ruby} ${git_branch}"
+# RPS1="%B${return_code}%b"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}‹"
 ZSH_THEME_GIT_PROMPT_SUFFIX="› %{$reset_color%}"
