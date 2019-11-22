@@ -27,8 +27,9 @@ _newline=$'\n'
 _lineup=$'\e[1A'
 _linedown=$'\e[1B'
 
-PROMPT="${user_host} ${current_dir}${_newline}%B${user_symbol}%b "
-RPS1="%{${_lineup}%}${time_and_date}${rvm_ruby} ${git_branch}%{${_linedown}%}"
+PROMPT="${user_host} ${current_dir} ${git_branch}${_newline}%B${user_symbol}%b "
+# RPS1="%{${_lineup}%}${time_and_date}${rvm_ruby}%{${_linedown}%}"
+RPS1="${time_and_date}${rvm_ruby}"
 # RPS1="%B${return_code}%b"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}‹"
